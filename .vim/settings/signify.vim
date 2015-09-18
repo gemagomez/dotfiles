@@ -1,4 +1,4 @@
-let g:signify_vcs_list = [ 'svn', 'git', 'hg', 'bzr' ]
+let g:signify_vcs_list = [ 'svn', 'bzr', 'git', 'hg' ]
 
 highlight SignifySignAdd    ctermfg=2
 highlight SignifySignDelete ctermfg=1
