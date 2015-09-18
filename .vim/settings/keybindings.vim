@@ -2,7 +2,8 @@
 nnoremap <leader>, ,
 
 " clear highlighting of hlsearch
-nnoremap <silent> <C-L> :nohlsearch<cr><C-L>
+nmap \q :nohlsearch<cr>
+nmap \c :nohlsearch<cr>
 
 " ," Surround a word with "quotes"
 map <leader>" ysiw"
@@ -31,12 +32,11 @@ map <leader>{ ysiw{
 vmap <leader>} c{ <C-R>" }<ESC>
 vmap <leader>{ c{<C-R>"}<ESC>
 
+" Go to last buffer
+nmap <C-e> :b#<cr>
+nnoremap <leader>p :b#<cr>
 
-" gary bernhardt's hashrocket
-imap <c-l> <space>=><space>
-
-
-"Go to last edit location with ,.
+" Go to last edit location with ,.
 nnoremap <leader>. '.
 
 
@@ -66,25 +66,24 @@ nnoremap <silent> <leader>cf :let @* = expand("%:~")<cr>
 nnoremap <leader>m :Man 
 
 
-
-"" SkyBison
-"""""""""""
-nnoremap <leader>B 2:<c-u>call SkyBison("b ")<cr>
-nnoremap <leader>E :<c-u>call SkyBison("e ")<cr>
-nnoremap <leader>H 2:<c-u>call SkyBison("h ")<cr>
-nnoremap <leader>T 2:<c-u>call SkyBison("tag ")<cr>
-
-
 "" Unite
 """""""""""
 " also supports -default-action=....
-nnoremap <leader>b :<c-u>Unite -quick-match buffer<cr>
+nnoremap <leader>b :<c-u>Unite -start-insert buffer<cr>
 nnoremap <leader>e :<c-u>Unite file<cr>
+nnoremap <leader>o :<c-u>Unite file/new<cr>
 nnoremap <leader>h :<c-u>Unite help<cr>
 nnoremap <leader>t :<c-u>Unite tag<cr>
 nnoremap <leader>y :<c-u>Unite -quick-match history/yank<cr>
 nnoremap <leader>r :<c-u>Unite file_mru<cr>
 
+"" CtrlP
+"""""""""""
+nnoremap <leader>B :<c-u>CtrlPBuffer<cr>
+nnoremap <leader>E :<c-u>CtrlP<cr>
+nnoremap <leader>W :<c-u>CtrlPCurWD<cr>
+nnoremap <leader>T :<c-u>CtrlPTag<cr>
+nnoremap <leader>R :<c-u>CtrlPMRUFiles<cr>
 
 "" NERDTree
 """""""""""
@@ -142,6 +141,19 @@ nnoremap <leader>gW :Gwrite<cr>
 nnoremap <leader>rc :VimuxPromptCommand<cr>
 nnoremap <leader>vp :VimuxPromptCommand<cr>
 
+"" vim-expand-region
+"""""""""""
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 " Start interactive EasyAlign in visual mode
 vmap <Enter> <Plug>(EasyAlign)
+
+
+"" visual search
+"""""""""""
+vnoremap <silent> * :<C-U>call VSetSearch('/')<CR>/<C-R>/<CR>
+vnoremap <silent> # :<C-U>call VSetSearch('?')<CR>?<C-R>/<CR>
+nmap <unique> <Leader>vl <Plug>VLToggle
+vnoremap <silent> _ :<C-U>call VSetSearchAssign('/')<CR>/<C-R>/<CR>
+nmap <leader>= /<c-r>='\s'."\\<".expand("<cword>").'\>.*\s\(<=\\|=\)\s'<cr><CR>
