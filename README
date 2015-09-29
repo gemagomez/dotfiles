@@ -1,5 +1,6 @@
+0) sudo apt-get install cmake
 1) git clone https://github.com/gemagomez/dotfiles.git
 2) mv dotfiles/.* .
-3) git submodule init
-4) git submodule update
-
+3) git submodule update --init --recursive
+4) cd .vim/bundle/YouCompleteMe
+   ./install.py --gocode-completer
