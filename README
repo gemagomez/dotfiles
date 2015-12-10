@@ -1,4 +1,4 @@
-0) sudo apt-get install cmake
+0) sudo apt-get install cmake python-dev g++
 1) git clone https://github.com/gemagomez/dotfiles.git
 2) mv dotfiles/.* .
 3) git submodule update --init --recursive
