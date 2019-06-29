@@ -126,7 +126,6 @@ Plug 'danro/rename.vim'
 
 Plug '~/.vim/bundle/ansiesc'
 Plug '~/.vim/bundle/scratch.vim'
-Plug '~/.vim/bundle/sv'
 call plug#end()
 
 
