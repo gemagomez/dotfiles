@@ -1,13 +1,15 @@
 "set t_Co=256
-"colorscheme railscasts-gema
 
-"hard, medium, soft
+let g:colorscheme_switcher_exclude_builtins = 1
+let g:colorscheme_switcher_define_mappings = 0
+
 set background=dark
+"hard, medium, soft
 let g:gruvbox_contrast_dark  = "hard"
 let g:gruvbox_contrast_light = "hard"
-colorscheme gruvbox
 
-" Horrible without .Xresources updates to color scheme
-"set background=light
-"let g:solarized_termcolors=256
-"colorscheme solarized
+let g:solarized_termcolors=256
+
+
+colorscheme gruvbox
+"colorscheme space-vim-dark
