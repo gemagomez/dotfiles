@@ -1,5 +1,0 @@
-1. Install cmake python-dev g++
-2. git clone https://github.com/gemagomez/dotfiles.git
-3. mv dotfiles/.* .
-4. git submodule update --init --recursive
-5. Open vim, use :PlugInstall to install the plugins
